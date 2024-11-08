@@ -21,6 +21,13 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { authGuard } from './services/auth.guard';
 import { SignalComponent } from './components/signal/signal.component';
 
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  exports: [RouterModule]
+})
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
